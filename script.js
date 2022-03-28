@@ -223,7 +223,7 @@ createBtn.addEventListener("click",()=>{
     body.append(div);
 })
 
-function loadTasks(color){
+function loadTasks(colorOfTic){
 
     let ticketsOnUI = document.querySelectorAll(".ticket");
     for(let i = 0; i < ticketsOnUI.length; i++){
@@ -238,7 +238,7 @@ function loadTasks(color){
         let currentTicketID = x;
         let currentTicketOBJ = allTickets[x];
 
-        if(color && color != currentTicketOBJ.color){
+        if(colorOfTic && colorOfTic != currentTicketOBJ.color){
             continue;
         }
 
@@ -281,6 +281,7 @@ function loadTasks(color){
             let currentTicketId = e.currentTarget.getAttribute("data-id");
             // console.log(currentTicketId);
             let currColor = e.target.classList[1];
+            console.log(color.indexOf(currColor));
             let index = color.indexOf(currColor);
             // for(let i = 0; i < 4; i++){
             //     if(color[i] == currColor){
